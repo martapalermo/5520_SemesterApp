@@ -1,0 +1,2 @@
+rootProject.name = "MADSu21-MartaPalermo"
+include ':app'

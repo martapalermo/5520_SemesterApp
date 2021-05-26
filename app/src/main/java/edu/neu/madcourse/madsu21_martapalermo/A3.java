@@ -20,47 +20,70 @@ public class A3 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clickyclik);
 
-        buttonA = findViewById(R.id.buttonA);
-        buttonA.setOnClickListener(this::onClick);
+        buttonA = (Button) findViewById(R.id.buttonA);
+        buttonA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView pressTV = (TextView) findViewById(R.id.pressed);
+                if (v.getId() == R.id.buttonA) {
+                    pressTV.setText("Pressed: A");
+                }
+            }
+        });
 
-        buttonB = findViewById(R.id.buttonB);
-        buttonB.setOnClickListener(this::onClick);
+        buttonB = (Button) findViewById(R.id.buttonB);
+        buttonB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView pressTV = (TextView) findViewById(R.id.pressed);
+                if (v.getId() == R.id.buttonB) {
+                    pressTV.setText("Pressed: B");
+                }
+            }
+        });
 
-        buttonC = findViewById(R.id.buttonC);
-        buttonC.setOnClickListener(this::onClick);
+        buttonC = (Button) findViewById(R.id.buttonC);
+        buttonC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView pressTV = (TextView) findViewById(R.id.pressed);
+                if (v.getId() == R.id.buttonC) {
+                    pressTV.setText("Pressed: C");
+                }
+            }
+        });
 
-        buttonD = findViewById(R.id.buttonD);
-        buttonD.setOnClickListener(this::onClick);
+        buttonD = (Button) findViewById(R.id.buttonD);
+        buttonD.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView pressTV = (TextView) findViewById(R.id.pressed);
+                if (v.getId() == R.id.buttonD) {
+                    pressTV.setText("Pressed: D");
+                }
+            }
+        });
 
-        buttonE = findViewById(R.id.buttonE);
-        buttonE.setOnClickListener(this::onClick);
+        buttonE = (Button) findViewById(R.id.buttonE);
+        buttonE.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView pressTV = (TextView) findViewById(R.id.pressed);
+                if (v.getId() == R.id.buttonE) {
+                    pressTV.setText("Pressed: E");
+                }
+            }
+        });
 
-        buttonF = findViewById(R.id.buttonF);
-        buttonF.setOnClickListener(this::onClick);
-    }
-
-
-    public void onClick(View view) {
-        TextView pressTV = (TextView) findViewById(R.id.pressed);
-        switch (view.getId()) {
-            case R.id.buttonA:
-                pressTV.setText("Pressed: A");
-                break;
-            case R.id.buttonB:
-                pressTV.setText("Pressed: B");
-                break;
-            case R.id.buttonC:
-                pressTV.setText("Pressed: C");
-                break;
-            case R.id.buttonD:
-                pressTV.setText("Pressed: D");
-                break;
-            case R.id.buttonE:
-                pressTV.setText("Pressed: E");
-                break;
-            case R.id.buttonF:
-                pressTV.setText("Pressed: F");
-                break;
-        }
+        buttonF = (Button) findViewById(R.id.buttonF);
+        buttonF.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView pressTV = (TextView) findViewById(R.id.pressed);
+                if (v.getId() == R.id.buttonF) {
+                    pressTV.setText("Pressed: F");
+                }
+            }
+        });
     }
 }

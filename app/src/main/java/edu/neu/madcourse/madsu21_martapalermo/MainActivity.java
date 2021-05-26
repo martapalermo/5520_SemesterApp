@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void openAbout() {
-        Intent intent = new Intent(this, About.class);
+        Intent intent = new Intent(this, A1.class);
         startActivity(intent);
     }
 

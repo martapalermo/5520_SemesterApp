@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_mp_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MADSu21MartaPalermo">
-        <activity android:name=".About"></activity>
+        <activity android:name=".A1"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

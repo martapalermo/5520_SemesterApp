@@ -4,32 +4,20 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    private Button aboutMe, clickyClick;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        aboutMe = (Button) findViewById(R.id.aboutMe);
-        aboutMe.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openAbout();
-            }
-        });
+        Button aboutMe = findViewById(R.id.aboutMe);
+        aboutMe.setOnClickListener(v -> openAbout());
 
-        clickyClick = (Button) findViewById(R.id.clickyClick);
-        clickyClick.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openClickyClick();
-            }
-        });
+        Button clickyClick = findViewById(R.id.clickyClick);
+        clickyClick.setOnClickListener(v -> openClickyClick());
     }
 
     private void openAbout() {

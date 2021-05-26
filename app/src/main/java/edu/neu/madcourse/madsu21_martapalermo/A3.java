@@ -37,7 +37,6 @@ public class A3 extends AppCompatActivity {
 
         buttonF = findViewById(R.id.buttonF);
         buttonF.setOnClickListener(this::onClick);
-
     }
 
 

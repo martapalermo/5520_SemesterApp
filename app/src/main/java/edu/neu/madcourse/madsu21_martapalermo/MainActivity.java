@@ -39,5 +39,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void openClickyClick() {
         Intent intent = new Intent(this, A3.class);
+        startActivity(intent);
     }
 }

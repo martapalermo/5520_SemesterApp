@@ -24,10 +24,20 @@ public class MainActivity extends AppCompatActivity {
         });
 
         clickyClick = (Button) findViewById(R.id.clickyClick);
+        clickyClick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openClickyClick();
+            }
+        });
     }
 
     private void openAbout() {
         Intent intent = new Intent(this, About.class);
         startActivity(intent);
+    }
+
+    private void openClickyClick() {
+        Intent intent = new Intent(this, A3.class);
     }
 }

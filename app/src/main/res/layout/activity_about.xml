@@ -10,9 +10,10 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_user_nmy_name_is_marta_palermo_nmy_email_address_is_palermo_m_northeastern_edu"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="347dp"
-        tools:ignore="MissingConstraints" />
+        android:text="Hello user! \nMy name is Marta Palermo
+        \nMy email is: palermo.m@northeastern.edu"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="72dp"
+        tools:layout_editor_absoluteY="339dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

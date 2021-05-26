@@ -20,11 +20,13 @@ public class MainActivity extends AppCompatActivity {
         clickyClick.setOnClickListener(v -> openClickyClick());
     }
 
+    // opens A1 window
     private void openAbout() {
         Intent intent = new Intent(this, A1.class);
         startActivity(intent);
     }
 
+    // opens A3 window
     private void openClickyClick() {
         Intent intent = new Intent(this, A3.class);
         startActivity(intent);

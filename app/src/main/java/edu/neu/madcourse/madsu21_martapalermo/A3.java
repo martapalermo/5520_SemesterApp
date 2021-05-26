@@ -11,7 +11,7 @@ public class A3 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_clickyclik);
+        setContentView(R.layout.activity_clickyclick);
 
         Button buttonA = findViewById(R.id.buttonA);
         buttonA.setOnClickListener(v -> {

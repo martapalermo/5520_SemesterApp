@@ -1,7 +1,6 @@
 package edu.neu.madcourse.madsu21_martapalermo;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 

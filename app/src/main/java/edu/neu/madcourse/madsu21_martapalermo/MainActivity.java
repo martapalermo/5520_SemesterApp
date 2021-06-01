@@ -18,7 +18,11 @@ public class MainActivity extends AppCompatActivity {
 
         Button clickyClick = findViewById(R.id.clickyClick);
         clickyClick.setOnClickListener(v -> openClickyClick());
+
+        Button linkCollector = findViewById(R.id.linkCollector);
+        linkCollector.setOnClickListener(v -> openLinkCollector());
     }
+
 
     // opens A1 window
     private void openAbout() {
@@ -29,6 +33,12 @@ public class MainActivity extends AppCompatActivity {
     // opens A3 window
     private void openClickyClick() {
         Intent intent = new Intent(this, A3.class);
+        startActivity(intent);
+    }
+
+    // opens A4 window
+    private void openLinkCollector() {
+        Intent intent = new Intent(this, A4.class);
         startActivity(intent);
     }
 }

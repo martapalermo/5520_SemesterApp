@@ -11,72 +11,65 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/a"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.169"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.388" />
+        app:layout_constraintBottom_toTopOf="@id/buttonD"
+        app:layout_constraintEnd_toStartOf="@id/buttonB"
+        app:layout_constraintStart_toStartOf="parent"
+         />
 
     <Button
         android:id="@+id/buttonB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/b"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/buttonE"
+        app:layout_constraintEnd_toStartOf="@id/buttonC"
+        app:layout_constraintStart_toEndOf="@id/buttonA"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.388" />
+        app:layout_constraintVertical_bias="0.498" />
 
     <Button
         android:id="@+id/buttonC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/c"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/buttonF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.832"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.388" />
+        app:layout_constraintStart_toEndOf="@id/buttonB"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/d"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.17"
+        app:layout_constraintBottom_toTopOf="@id/pressed"
+        app:layout_constraintEnd_toStartOf="@id/buttonE"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.554" />
+        app:layout_constraintTop_toBottomOf="@id/buttonA" />
 
     <Button
         android:id="@+id/buttonE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/e"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.554" />
+        app:layout_constraintBottom_toTopOf="@id/pressed"
+        app:layout_constraintEnd_toStartOf="@id/buttonF"
+
+        app:layout_constraintStart_toEndOf="@id/buttonD"
+        app:layout_constraintTop_toBottomOf="@id/buttonB"
+        />
 
     <Button
         android:id="@+id/buttonF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/f"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/pressed"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.832"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.554" />
+        app:layout_constraintStart_toEndOf="@id/buttonE"
+        app:layout_constraintTop_toBottomOf="@id/buttonC"
+         />
 
     <TextView
         android:id="@+id/pressed"
@@ -86,10 +79,10 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.212"
+        app:layout_constraintHorizontal_bias="0.142"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.752" />
+        app:layout_constraintVertical_bias="0.755" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

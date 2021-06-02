@@ -14,4 +14,7 @@
     <string name="hello_user_nmy_name_is_marta_palermo_nmy_email_address_is_palermo_m_northeastern_edu">Hello user! \nMy name is Marta Palermo \nMy email address is: palermo.m@northeastern.edu</string>
     <string name="pressed_none">Pressed: none</string>
     <string name="a4_link_collector">A4 - Link Collector</string>
+    <string name="todo">TODO</string>
+    <string name="add_link">add link</string>
+    <string name="testing_testing">testing testing</string>
 </resources>

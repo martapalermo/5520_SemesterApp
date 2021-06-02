@@ -10,9 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MADSu21MartaPalermo">
         <activity android:name=".A1"
-            android:configChanges="orientation|screenSize|keyboardHidden"></activity>
+            android:configChanges="orientation|screenSize|keyboardHidden" />
         <activity android:name=".A3"
-            android:configChanges="orientation|screenSize|keyboardHidden"></activity>
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity android:name=".A4"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

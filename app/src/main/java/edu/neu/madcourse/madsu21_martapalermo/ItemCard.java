@@ -1,5 +1,8 @@
 package edu.neu.madcourse.madsu21_martapalermo;
 
+import android.content.Intent;
+import android.net.Uri;
+
 public class ItemCard implements ItemClickListener {
 
     private int imageSrc;
@@ -35,10 +38,15 @@ public class ItemCard implements ItemClickListener {
     @Override
     public void onItemClick(int position) {
         checkedStatus = !checkedStatus;
+
     }
 
     @Override
     public void onCheckBoxClick(int position) {
         checkedStatus = !checkedStatus;
+//        if (checkedStatus) {
+//            Intent openLink = new Intent(Intent.ACTION_VIEW, Uri.parse(userInput));
+//            startActivity(openLink);
+//        }
     }
 }

@@ -1,5 +1,7 @@
 package edu.neu.madcourse.madsu21_martapalermo;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.InputType;
 import android.widget.EditText;
@@ -13,13 +15,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.net.URI;
 import java.util.ArrayList;
 
 public class A4 extends AppCompatActivity {
 
     private ArrayList<ItemCard> itemList = new ArrayList<>();
     private RecyclerView recyclerView;
-    private RviewAdapter rviewAdapter;
+    private RecyclerAdapter recyclerAdapter;
     private RecyclerView.LayoutManager rLayoutManager;
     private String m_Text = "";
     
@@ -37,7 +40,7 @@ public class A4 extends AppCompatActivity {
         fab.setOnClickListener(v -> {
             // have onClick prompt dialog
             int pos = 0;
-            callAlertDialog(pos);
+            openAlertDialog(pos);
         });
 
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new ItemTouchHelper
@@ -54,13 +57,13 @@ public class A4 extends AppCompatActivity {
                 Toast.makeText(A4.this, "Deleted a link", Toast.LENGTH_SHORT).show();
                 int position = viewHolder.getLayoutPosition();
                 itemList.remove(position);
-                rviewAdapter.notifyItemRemoved(position);
+                recyclerAdapter.notifyItemRemoved(position);
             }
         });
         itemTouchHelper.attachToRecyclerView(recyclerView);
     }
 
-    private void callAlertDialog(int position) {
+    private void openAlertDialog(int position) {
         AlertDialog popUp = new AlertDialog.Builder(A4.this).create();
         popUp.setTitle("Enter new URL:");
 
@@ -81,10 +84,21 @@ public class A4 extends AppCompatActivity {
         popUp.show();
     }
 
+    public void openURL(String url) {
+        Uri link = Uri.parse(url);
+        if (!url.startsWith("http://") && !url.startsWith("https://")) {
+            url = "http://" + url;
+        }
+        Intent intent = new Intent(Intent.ACTION_VIEW, link);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+    }
+
     private void addItem(int position) {
         itemList.add(position, new ItemCard(R.drawable.empty, m_Text, false));
                // + Math.abs(new Random().nextInt(100000)), false));
-        rviewAdapter.notifyItemInserted(position);
+        recyclerAdapter.notifyItemInserted(position);
     }
 
     private void init(Bundle savedInstanceState) {
@@ -98,23 +112,24 @@ public class A4 extends AppCompatActivity {
         recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
 
-        rviewAdapter = new RviewAdapter(itemList);
+        recyclerAdapter = new RecyclerAdapter(itemList);
         ItemClickListener itemClickListener = new ItemClickListener() {
             @Override
             public void onItemClick(int position) {
                 itemList.get(position).onItemClick(position);
-                rviewAdapter.notifyItemChanged(position);
+                recyclerAdapter.notifyItemChanged(position);
+                //openURL(m_Text);
             }
 
             @Override
             public void onCheckBoxClick(int position) {
                 //attributions bond to the item has been changed
                 itemList.get(position).onCheckBoxClick(position);
-                rviewAdapter.notifyItemChanged(position);
+                recyclerAdapter.notifyItemChanged(position);
             }
         };
-        rviewAdapter.setOnItemClickListener(itemClickListener);
-        recyclerView.setAdapter(rviewAdapter);
+        recyclerAdapter.setOnItemClickListener(itemClickListener);
+        recyclerView.setAdapter(recyclerAdapter);
         recyclerView.setLayoutManager(rLayoutManager);
     }
 
@@ -140,7 +155,5 @@ public class A4 extends AppCompatActivity {
     }
 
 
-
-
-
 }
+

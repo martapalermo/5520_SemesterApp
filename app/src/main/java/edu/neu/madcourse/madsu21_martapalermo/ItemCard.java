@@ -11,10 +11,10 @@ public class ItemCard implements ItemClickListener {
     private boolean checkedStatus;
 
     // constructor for item card --> what every added link item will look like
-    public ItemCard(int imageSrc, String itemName, boolean checkedStatus) {
-        this.imageSrc = imageSrc;
+    public ItemCard(String itemName, String itemDescription, boolean checkedStatus) {
+        //this.imageSrc = imageSrc;
         this.itemName = itemName;
-        //this.itemDescription = itemDescription;
+        this.itemDescription = itemDescription;
         this.checkedStatus = checkedStatus;
     }
 
@@ -26,27 +26,33 @@ public class ItemCard implements ItemClickListener {
         return itemName;  //);
     }
 
-//    public String getItemDescription() {
-//        return itemDescription;
-//    }
+    public String getItemDescription() {
+        return itemDescription;
+    }
 
     public boolean isChecked() {
         return checkedStatus;
     }
 
+    public void openURL(String url) {
+        if (!url.startsWith("http://") && !url.startsWith("https://")) {
+            url = "http://" + url;
+        }
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+//        if (intent.resolveActivity(getPackageManager()) != null) {
+//            startActivity(intent);
+//        }
+    }
 
     @Override
     public void onItemClick(int position) {
         checkedStatus = !checkedStatus;
+        //openURL(url);
 
     }
 
     @Override
     public void onCheckBoxClick(int position) {
         checkedStatus = !checkedStatus;
-//        if (checkedStatus) {
-//            Intent openLink = new Intent(Intent.ACTION_VIEW, Uri.parse(userInput));
-//            startActivity(openLink);
-//        }
     }
 }

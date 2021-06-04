@@ -12,17 +12,6 @@
         android:layout_height="match_parent"
         android:layout_margin="5dp">
 
-        <!--        <TextView-->
-        <!--            android:id="@+id/item_description"-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_below="@+id/item_name"-->
-        <!--            android:layout_toEndOf="@+id/item_icon"-->
-        <!--            android:layout_marginStart="10dp"-->
-        <!--            android:layout_marginTop="5dp"-->
-
-        <!--            android:text="item description" />-->
-
         <ImageView
             android:id="@+id/item_icon"
             android:layout_width="50dp"
@@ -38,22 +27,36 @@
             android:id="@+id/item_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="36dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
             android:text="item name"
             android:textColor="@android:color/black"
             android:textSize="15sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/item_icon"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/item_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="item description"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/item_icon" />
 
         <CheckBox
             android:id="@+id/check_box"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="152dp"
+            android:layout_marginStart="12dp"
             android:layout_marginTop="4dp"
-            android:layout_toEndOf="@+id/item_name"
-            app:layout_constraintStart_toEndOf="@+id/item_name"
+            android:layout_toEndOf="@+id/item_icon"
+            app:layout_constraintStart_toStartOf="@id/item_icon"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

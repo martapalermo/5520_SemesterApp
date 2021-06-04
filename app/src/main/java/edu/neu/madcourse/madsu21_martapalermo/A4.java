@@ -15,7 +15,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import java.net.URI;
 import java.util.ArrayList;
 
 public class A4 extends AppCompatActivity {
@@ -24,7 +23,8 @@ public class A4 extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerAdapter recyclerAdapter;
     private RecyclerView.LayoutManager rLayoutManager;
-    private String m_Text = "";
+    private String urlInput = "";
+    private String urlName = "";
     
     private static final String KEY_OF_INSTANCE = "KEY_OF_INSTANCE";
     private static final String NUMBER_OF_ITEMS = "NUMBER_OF_ITEMS";
@@ -74,7 +74,7 @@ public class A4 extends AppCompatActivity {
 
         // set up buttons
         popUp.setButton(AlertDialog.BUTTON_POSITIVE, "Add", (dialog, which) -> {
-            m_Text = input.getText().toString();
+            urlInput = input.getText().toString();
             addItem(position);
             Toast.makeText(A4.this, "Added a link", Toast.LENGTH_SHORT).show();
         });
@@ -96,7 +96,7 @@ public class A4 extends AppCompatActivity {
     }
 
     private void addItem(int position) {
-        itemList.add(position, new ItemCard(R.drawable.empty, m_Text, false));
+        itemList.add(position, new ItemCard(urlInput, urlName, false));
                // + Math.abs(new Random().nextInt(100000)), false));
         recyclerAdapter.notifyItemInserted(position);
     }
@@ -126,6 +126,7 @@ public class A4 extends AppCompatActivity {
                 //attributions bond to the item has been changed
                 itemList.get(position).onCheckBoxClick(position);
                 recyclerAdapter.notifyItemChanged(position);
+                //openURL(m_Text);
             }
         };
         recyclerAdapter.setOnItemClickListener(itemClickListener);
@@ -139,15 +140,15 @@ public class A4 extends AppCompatActivity {
 
                 int size = savedInstanceState.getInt(NUMBER_OF_ITEMS);
                 for (int i = 0; i < size; i++) {
-                    Integer imgId = savedInstanceState.getInt(KEY_OF_INSTANCE + i + "0");
-                    String itemName = savedInstanceState.getString(KEY_OF_INSTANCE + i + "1");
-                    //String itemDescription = savedInstanceState.getString(KEY_OF_INSTANCE + i + "2");
-                    boolean isChecked = savedInstanceState.getBoolean(KEY_OF_INSTANCE + i + "3");
+                    //Integer imgId = savedInstanceState.getInt(KEY_OF_INSTANCE + i + "0");
+                    String itemName = savedInstanceState.getString(KEY_OF_INSTANCE + i + "0");
+                    String itemDescription = savedInstanceState.getString(KEY_OF_INSTANCE + i + "1");
+                    boolean isChecked = savedInstanceState.getBoolean(KEY_OF_INSTANCE + i + "2");
 
                     if (isChecked) {
                         itemName = itemName.substring(0, itemName.lastIndexOf("("));
                     }
-                    ItemCard itemCard = new ItemCard(imgId, itemName, isChecked);
+                    ItemCard itemCard = new ItemCard(itemName, itemDescription, isChecked);
                     itemList.add(itemCard);
                 }
             }

@@ -2,16 +2,16 @@ package edu.neu.madcourse.madsu21_martapalermo;
 
 public class ItemCard implements ItemClickListener {
 
-    private final int imageSrc;
-    private final String itemName;
-    private final String itemDescription;
+    private int imageSrc;
+    private String itemName;
+    private String itemDescription;
     private boolean checkedStatus;
 
     // constructor for item card --> what every added link item will look like
-    public ItemCard(int imageSrc, String itemName, String itemDescription, boolean checkedStatus) {
+    public ItemCard(int imageSrc, String itemName, boolean checkedStatus) {
         this.imageSrc = imageSrc;
         this.itemName = itemName;
-        this.itemDescription = itemDescription;
+        //this.itemDescription = itemDescription;
         this.checkedStatus = checkedStatus;
     }
 
@@ -20,12 +20,12 @@ public class ItemCard implements ItemClickListener {
     }
 
     public String getItemName() {
-        return itemName + (checkedStatus ? "(checked)" : "");
+        return itemName;  //);
     }
 
-    public String getItemDescription() {
-        return itemDescription;
-    }
+//    public String getItemDescription() {
+//        return itemDescription;
+//    }
 
     public boolean isChecked() {
         return checkedStatus;

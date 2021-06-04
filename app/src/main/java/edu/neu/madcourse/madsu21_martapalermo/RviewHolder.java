@@ -12,14 +12,14 @@ public class RviewHolder extends RecyclerView.ViewHolder {
 
     public ImageView itemIcon;
     public TextView itemName;
-    public TextView itemDescription;
-    public CheckBox checkBox;
+    //public TextView itemDescription;
+        public CheckBox checkBox;
 
     public RviewHolder(View itemView, final ItemClickListener listener) {
         super(itemView);
         itemIcon = itemView.findViewById(R.id.item_icon);
         itemName = itemView.findViewById(R.id.item_name);
-        itemDescription = itemView.findViewById(R.id.item_description);
+        //itemDescription = itemView.findViewById(R.id.item_description);
         checkBox = itemView.findViewById(R.id.check_box);
 
         itemView.setOnClickListener(new View.OnClickListener() {

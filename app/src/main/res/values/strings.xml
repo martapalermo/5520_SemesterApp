@@ -17,4 +17,6 @@
     <string name="todo">TODO</string>
     <string name="add_link">add link</string>
     <string name="testing_testing">testing testing</string>
+    <string name="click_the_to_add_url_link">Click the + to add URL link!</string>
+    <string name="click_to_add_url_link">click + to add url link</string>
 </resources>

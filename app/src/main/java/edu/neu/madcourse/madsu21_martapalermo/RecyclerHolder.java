@@ -17,7 +17,7 @@ public class RecyclerHolder extends RecyclerView.ViewHolder {
     public TextView itemName;
     public TextView itemDescription;
 
-    public RecyclerHolder(View itemView, final ItemClickListener listener, Context context) {
+    public RecyclerHolder(View itemView, final ItemClickListener listener) {
         super(itemView);
 
         // linkName
@@ -29,23 +29,10 @@ public class RecyclerHolder extends RecyclerView.ViewHolder {
 
             @Override
             public void onClick(View v) {
-//                if (listener != null) {
-//                    int position = getLayoutPosition();
-//                    if (position != RecyclerView.NO_POSITION) {
-//                        listener.onItemClick(position);
-//                    }
-//                }
                 if (listener != null) {
-                    Uri linkToWeb = Uri.parse(m_Text);
-
-                    if (!m_Text.startsWith("http://") && !m_Text.startsWith("https://")) {
-                        linkToWeb = Uri.parse("http://" + m_Text);
-                    }
-                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, linkToWeb);
-                    try {
-                        context.startActivity(browserIntent);
-                    } catch (Exception e) {
-                        Toast.makeText(v.getContext(), "The url was invalid. Please try again ", Toast.LENGTH_LONG);
+                    int position = getLayoutPosition();
+                    if (position != RecyclerView.NO_POSITION) {
+                        listener.onItemClick(position);
                     }
                 }
             }

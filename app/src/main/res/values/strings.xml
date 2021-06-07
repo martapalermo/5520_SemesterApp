@@ -24,4 +24,6 @@
     <string name="enter_the_url_link_here">Enter the url link here</string>
     <string name="enter_the_name_here">Enter the name here</string>
     <string name="enter_new_url">Enter new URL</string>
+    <string name="Add">Add</string>
+    <string name="Cancel">Cancel</string>
 </resources>

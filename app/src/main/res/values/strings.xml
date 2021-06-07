@@ -19,4 +19,9 @@
     <string name="testing_testing">testing testing</string>
     <string name="click_the_to_add_url_link">Click the + to add URL link!</string>
     <string name="click_to_add_url_link">click + to add url link</string>
+    <string name="add">add</string>
+    <string name="cancel">cancel</string>
+    <string name="enter_the_url_link_here">Enter the url link here</string>
+    <string name="enter_the_name_here">Enter the name here</string>
+    <string name="enter_new_url">Enter new URL</string>
 </resources>

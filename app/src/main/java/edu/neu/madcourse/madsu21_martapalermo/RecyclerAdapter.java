@@ -32,10 +32,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerHolder> {
     public void onBindViewHolder(RecyclerHolder holder, int position) {
         ItemCard currentItem = itemList.get(position);
 
-        //holder.itemIcon.setImageResource(currentItem.getImageSource());
-        holder.itemName.setText(currentItem.getItemName());
-        //holder.itemDescription.setText(currentItem.getItemDescription());
-        holder.checkBox.setChecked(currentItem.isChecked());
+        holder.itemName.setText((CharSequence) currentItem.getLinkName());
+        holder.itemDescription.setText((CharSequence) currentItem.getLinkURL());
     }
 
     @Override

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="@string/enter_new_url" />
+
+    <EditText
+        android:id="@+id/inputName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dialog"
+        android:textSize="17sp"
+        android:textStyle="italic"
+        android:hint="@string/enter_the_name_here" />
+
+    <EditText
+        android:id="@+id/inputUrl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/inputName"
+        android:textSize="17sp"
+        android:textStyle="italic"
+        android:hint="@string/enter_the_url_link_here"
+        />
+
+    <Button
+        android:id="@+id/btn_Cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/inputUrl"
+
+        android:layout_marginTop="4dp"
+        android:clickable="true"
+        android:text="@string/cancel"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_Add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@id/inputUrl"
+
+        android:layout_marginTop="126dp"
+        android:layout_marginEnd="2dp"
+        android:clickable="true"
+        android:text="@string/add"
+        android:textAllCaps="false" />
+
+
+</RelativeLayout>

@@ -21,6 +21,9 @@ public class MainActivity extends AppCompatActivity {
 
         Button linkCollector = findViewById(R.id.linkCollector);
         linkCollector.setOnClickListener(v -> openLinkCollector());
+
+        Button locator = findViewById(R.id.locator);
+        locator.setOnClickListener(v -> openLocator());
     }
 
 
@@ -39,6 +42,12 @@ public class MainActivity extends AppCompatActivity {
     // opens A4 window
     private void openLinkCollector() {
         Intent intent = new Intent(this, A4.class);
+        startActivity(intent);
+    }
+
+    // opens A5 window
+    private void openLocator() {
+        Intent intent = new Intent(this, A5.class);
         startActivity(intent);
     }
 }

@@ -24,7 +24,6 @@ public class A5 extends AppCompatActivity {
 
     private static final int REQUEST_CODE_LOCATION_PERMISSION = 1;
     private TextView tvLatLong;
-    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,20 +31,16 @@ public class A5 extends AppCompatActivity {
         setContentView(R.layout.activity_locator);
 
         tvLatLong = findViewById(R.id.text_latLong);
-        progressBar = findViewById(R.id.progress_bar);
 
-        findViewById(R.id.btn_getLocation).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (ContextCompat.checkSelfPermission(
-                        getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION)
-                        != PackageManager.PERMISSION_GRANTED) {
-                    ActivityCompat.requestPermissions(A5.this,
-                            new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                            REQUEST_CODE_LOCATION_PERMISSION);
-                } else {
-                    getCurrentLocation();
-                }
+        findViewById(R.id.btn_getLocation).setOnClickListener(v -> {
+            if (ContextCompat.checkSelfPermission(
+                    getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION)
+                    != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(A5.this,
+                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                        REQUEST_CODE_LOCATION_PERMISSION);
+            } else {
+                getCurrentLocation();
             }
         });
     }
@@ -63,7 +58,6 @@ public class A5 extends AppCompatActivity {
     }
 
     private void getCurrentLocation() {
-        progressBar.setVisibility(View.VISIBLE);
 
         LocationRequest locationRequest = new LocationRequest();
         locationRequest.setInterval(10000);
@@ -92,7 +86,6 @@ public class A5 extends AppCompatActivity {
                             tvLatLong.setText(String.format("Latitude: %s\nLongitude: %s", latitude, longitude)
                             );
                         }
-                        progressBar.setVisibility(View.GONE);
                     }
                 }, Looper.getMainLooper());
     }

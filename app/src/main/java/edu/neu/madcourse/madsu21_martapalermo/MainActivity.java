@@ -24,6 +24,9 @@ public class MainActivity extends AppCompatActivity {
 
         Button locator = findViewById(R.id.locator);
         locator.setOnClickListener(v -> openLocator());
+
+        Button service = findViewById(R.id.service);
+        service.setOnClickListener(v -> openService());
     }
 
 
@@ -51,4 +54,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    // opens A6 window
+    private void openService() {
+        Intent intent = new Intent(this, A6.class);
+        startActivity(intent);
+    }
 }

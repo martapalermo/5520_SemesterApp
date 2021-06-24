@@ -52,5 +52,14 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@id/linkCollector" />
 
+    <Button
+        android:id="@+id/service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="A6 - At Your Service"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/locator" />
+
 </RelativeLayout>
 

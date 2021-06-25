@@ -21,24 +21,31 @@ public class A6 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_at_your_service);
 
-        Button searchBtn = findViewById(R.id.searchBtn);
-
-        Button clearBtn = findViewById(R.id.clearBtn);
-        clearBtn.setOnClickListener(v -> {
-            TextView def = findViewById(R.id.showDef);
-            if (v.getId() == R.id.clearBtn) {
-                def.setText("");
-            }
-        });
 
         showDef = findViewById(R.id.showDef);
         enterWord = findViewById(R.id.enterWord);
-//        progressBar = findViewById(R.id.progressBar);
+        //Button searchBtn = findViewById(R.id.searchBtn);
+
+        Button clearBtn = findViewById(R.id.clearBtn);
+        clearBtn.setOnClickListener(v -> {
+            TextView def = showDef;
+            EditText word = enterWord;
+            if (v.getId() == R.id.clearBtn) {
+                def.setText("");
+                word.setText("");
+                findViewById(R.id.progressBar).setVisibility(View.VISIBLE);
+            }
+
+        });
+
+     //   findViewById(R.id.progressBar).setVisibility(View.VISIBLE);
     }
+
+
     private String dictionaryEntries() {
         final String language = "en-gb";
         final String word = enterWord.getText().toString(); // we're gonna get meaning of entered word
-        final String fields = "definitions"; // replace with whatever field we want
+        final String fields = "definitions"; //"etymologies"; // replace with whatever field we want  definitions
         final String strictMatch = "false";
         final String word_id = word.toLowerCase();
         return "https://od-api.oxforddictionaries.com:443/api/v2/entries/" + language + "/" + word_id + "?" + "fields=" + fields + "&strictMatch=" + strictMatch;
@@ -48,6 +55,7 @@ public class A6 extends AppCompatActivity {
         DictionaryRequest dR = new DictionaryRequest(this, showDef);
         url = dictionaryEntries();
         dR.execute(url);
+        findViewById(R.id.progressBar).setVisibility(View.GONE);
     }
 
 

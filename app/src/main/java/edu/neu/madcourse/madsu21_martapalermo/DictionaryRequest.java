@@ -68,13 +68,13 @@ public class DictionaryRequest extends AsyncTask <String, Integer, String> {
             JSONArray laArray = lEntries.getJSONArray("lexicalEntries");
 
             JSONObject entries = laArray.getJSONObject(0);
-            JSONArray e = entries.getJSONArray("entries");
+            JSONArray e = entries.getJSONArray("entries"); //
 
             JSONObject jsonObject = e.getJSONObject(0);
             JSONArray sensesArray = jsonObject.getJSONArray("senses");
 
             JSONObject de = sensesArray.getJSONObject(0);
-            JSONArray d = de.getJSONArray("definitions"); // definitions
+            JSONArray d = de.getJSONArray("definitions");
 
             def = d.getString(0);
             showDef.setText(def);

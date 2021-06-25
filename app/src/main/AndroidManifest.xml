@@ -16,7 +16,6 @@
         android:theme="@style/Theme.MADSu21MartaPalermo"
         android:usesCleartextTraffic="true"
         tools:targetAPI="m">
-        <activity android:name=".A6"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -35,8 +34,13 @@
             android:name=".A4"
             android:configChanges="orientation|screenSize|keyboardHidden" />
         <activity
+            android:name=".A6"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
             android:name=".A5"
             android:configChanges="orientation|screenSize|keyboardHidden">
+
+
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>

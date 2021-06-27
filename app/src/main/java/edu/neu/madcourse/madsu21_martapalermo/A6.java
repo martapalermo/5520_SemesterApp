@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class A6 extends AppCompatActivity {
@@ -14,7 +13,6 @@ public class A6 extends AppCompatActivity {
     String url;
     private TextView showDef;
     private EditText enterWord;
-    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

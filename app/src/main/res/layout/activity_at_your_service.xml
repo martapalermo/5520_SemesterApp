@@ -1,82 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context=".A6">
+    android:layout_width="match_parent">
 
-    <TextView
-        android:id="@+id/prompt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Welcome to your mobile dictionary!\n\nEnter the word you want to define below:"
-        android:textSize="20dp"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@id/enterWord"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/enterWord"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Word to define "
-        android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/showDef"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/prompt" />
-
-    <TextView
-        android:id="@+id/showDef"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/enterWord"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/searchBtn"
-        android:scrollbars="vertical"
-        android:hint="Definition"
-        android:textSize="20dp"/>
-
-    <Button
-        android:id="@+id/searchBtn"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:onClick="sendRequestOnClick"
-        android:text="Search"
-        android:textSize="20dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/clearBtn"
-        app:layout_constraintTop_toBottomOf="@id/showDef" />
+        android:padding="16dp"
+        tools:context=".A6">
 
-    <Button
-        android:id="@+id/clearBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:text="Clear"
-        android:textSize="20dp"
-        app:layout_constraintLeft_toRightOf="@id/searchBtn"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/showDef" />
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="378dp"
+            android:layout_height="82dp"
+            android:src="@drawable/mobile_dict"
+            app:layout_constraintBottom_toTopOf="@id/enterWord"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:indeterminate="true"
-        app:layout_constraintHorizontal_bias="0.264"
-        app:layout_constraintLeft_toLeftOf="parent"
+        <TextView
+            android:id="@+id/prompt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image"
+            app:layout_constraintBottom_toTopOf="@id/enterWord"
+            android:text="Welcome, please enter a word below to define it" />
 
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/showDef" />
+        <EditText
+            android:id="@+id/enterWord"
+            android:layout_width="364dp"
+            android:layout_height="44dp"
+            android:hint="Enter your word! "
+            android:textSize="20dp"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            app:layout_constraintBottom_toTopOf="@+id/showDef"
+            app:layout_constraintHorizontal_bias="0.347"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/prompt" />
+
+        <TextView
+            android:id="@+id/showDef"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Definition"
+            android:scrollbars="vertical"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/searchBtn"
+            app:layout_constraintHorizontal_bias="0.049"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/enterWord" />
+
+        <Button
+            android:id="@+id/searchBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="96dp"
+            android:onClick="sendRequestOnClick"
+            android:text="Search"
+            android:textSize="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/clearBtn"
+            app:layout_constraintTop_toBottomOf="@id/showDef" />
+
+        <Button
+            android:id="@+id/clearBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="96dp"
+            android:text="Clear"
+            android:textSize="20dp"
+            app:layout_constraintLeft_toRightOf="@id/searchBtn"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/showDef" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="231dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="64dp"
+            android:indeterminate="true"
+            app:layout_constraintLeft_toLeftOf="parent"
+
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/showDef" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
